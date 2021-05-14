@@ -6,7 +6,7 @@ plugins {
 
 group 'io.github.jayfella'
 archivesBaseName = "jme-ext"
-version '1.0.0'
+version '0.9.0'
 
 task sourcesJar(type: Jar) {
     from sourceSets.main.allSource
@@ -20,10 +20,6 @@ task javadocJar(type: Jar) {
 
 artifacts {
     archives javadocJar, sourcesJar
-}
-
-signing {
-    sign configurations.archives
 }
 
 repositories {
@@ -45,15 +41,6 @@ dependencies {
 uploadArchives {
     repositories {
         mavenDeployer {
-            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
-
-            repository(url: "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            snapshotRepository(url: "https://s01.oss.sonatype.org/content/repositories/snapshots/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
 
             pom.project {
                 name 'jme-ext'
