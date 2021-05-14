@@ -27,13 +27,11 @@ repositories {
 }
 
 project.ext {
-    jme_ver = "3.3.2-stable"
+    jme_ver = "[3.3,)"
 }
 
 dependencies {
-    implementation "org.jmonkeyengine:jme3-core:$jme_ver"
-    implementation "org.jmonkeyengine:jme3-desktop:$jme_ver"
-    implementation "org.jmonkeyengine:jme3-lwjgl:$jme_ver"
+    implementation "org.jmonkeyengine:jme3-lwjgl3:$jme_ver"
 
     implementation "org.jmonkeyengine:jme3-plugins:$jme_ver"
 }
