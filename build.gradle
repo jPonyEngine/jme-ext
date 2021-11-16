@@ -27,7 +27,7 @@ repositories {
 }
 
 project.ext {
-    jme_ver = "[3.3,)"
+    jme_ver = "3.3.2-stable"
 }
 
 dependencies {
